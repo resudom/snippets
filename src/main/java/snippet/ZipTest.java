@@ -1,0 +1,39 @@
+package snippet;
+
+import java.io.*;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
+
+public class ZipTest {
+
+
+    public static void main(String[] args) throws IOException {
+        String xmlStr = "<ns9:ServiceOrderItemValue xmlns:ns2=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns4=\"http://ossj.org/xml/Common-CBECore/v1-5\" xmlns:ns3=\"http://ossj.org/xml/Common/v1-5\" xmlns:ns6=\"http://ossj.org/xml/OrderManagement/v1-0\" xmlns:ns5=\"http://ossj.org/xml/Common-CBEBi/v1-5\" xmlns:ns8=\"http://ossj.org/xml/Common-CBELocation/v1-5\" xmlns:ns7=\"http://ossj.org/xml/Common-CBEDatatypes/v1-5\" xmlns:ns13=\"http://ossj.org/xml/Common-CBEResource/v1-5\" xmlns:ns9=\"http://amdocs/core/ossj-OrderManagement/dat/3\" xmlns:ns12=\"http://amdocs/core/ossj-Common-CBEParty/dat/3\" xmlns:ns11=\"http://amdocs/core/ossj-Common/dat/3\" xmlns:ns10=\"http://amdocs/core/ossj-Common-CBEService/dat/3\" xmlns:ns17=\"http://amdocs/core/ossj-Common-CBEProduct/dat/3\" xmlns:ns16=\"http://ossj.org/xml/Common-CBEProduct/v1-5\" xmlns:ns15=\"http://ossj.org/xml/Common-CBEService/v1-5\" xmlns:ns14=\"http://amdocs/core/ossj-Inventory/dat/3\" xmlns:ns19=\"http://ossj.org/xml/Common-CBEProductOffering/v1-5\" xmlns:ns18=\"http://amdocs/core/ossj-Common-CBECustomer/dat/3\" xmlns:ns20=\"http://amdocs/core/ossj-Common-CBEResource/dat/3\" xmlns:ns24=\"http://ossj.org/xml/Inventory/v1-2\" xmlns:ns23=\"http://ossj.org/xml/Common-CBEUser/v1-5\" xmlns:ns22=\"http://ossj.org/xml/Common-CBECustomer/v1-5\" xmlns:ns21=\"http://ossj.org/xml/Common-CBEParty/v1-5\" xmlns:ns28=\"http://www.w3.org/2005/08/addressing\" xmlns:ns27=\"http://docs.oasis-open.org/wsrf/bf-2\" xmlns:ns26=\"http://docs.oasis-open.org/wsn/b-2\" xmlns:ns25=\"http://ossj.org/xml/Common-CBEReport/v1-5\" xmlns:ns29=\"http://docs.oasis-open.org/wsn/t-1\"><ns5:action>MODIFY</ns5:action><ns6:service xsi:type=\"ns10:ServiceValue\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ns3:key xsi:type=\"ns10:ServiceKey\"><ns3:type>Service</ns3:type><ns3:primaryKey><ns11:primaryKey xmlns=\"http://amdocs/core/ossj-Common/dat/3\">52570</ns11:primaryKey></ns3:primaryKey></ns3:key><ns4:describedBy xsi:type=\"ns11:ArrayOfCharacteristicValue\"><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic xsi:nil=\"true\"/><ns11:values xsi:type=\"ns11:ArrayOfCharacteristicValue\"><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>telephone_number</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">9879781991</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>switch_id</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"></ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>old_switch_id</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">Test_SoftxName</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>address_id</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">5796349507</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>customer_id</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">200000074_2018-4-10_16-58-12</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>address_node_id</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">F</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>network_operator_code</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">0696</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>subscription_id</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">200000074_2018-4-10_16-58-12_5796349507</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>client_class</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">MTA</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>service_id</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">F675E825CE74412389D19368DE7A4D86</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>policy_name</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">null_mta_1_line</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>old_policy_name</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">name_mta_1_line</ns11:values></ns4:item></ns11:values></ns4:item></ns4:describedBy><ns10:serviceType>r_LDAP_VOICE</ns10:serviceType></ns6:service><ns9:resources><ns13:item xsi:type=\"ns20:ResourceValue\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ns4:describedBy xsi:type=\"ns11:ArrayOfCharacteristicValue\"><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic xsi:nil=\"true\"/><ns11:values xsi:type=\"ns11:ArrayOfCharacteristicValue\"><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>fqdn</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">0000000010.rjo.virtua.com.br</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>cpe_id</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">F2E1C725B859486C855CFF766C07D427</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>cpe_type</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">3P:HD:1:D3.0:W</ns11:values></ns4:item></ns11:values></ns4:item></ns4:describedBy><ns20:resourceType>r_CPE</ns20:resourceType></ns13:item><ns13:item xsi:type=\"ns20:ResourceValue\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><ns4:describedBy xsi:type=\"ns11:ArrayOfCharacteristicValue\"><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic xsi:nil=\"true\"/><ns11:values xsi:type=\"ns11:ArrayOfCharacteristicValue\"><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>mac_address</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">6CB56B76AA79</ns11:values></ns4:item><ns4:item xsi:type=\"ns11:CharacteristicValue\"><ns4:characteristic>service_port_type</ns4:characteristic><ns11:values xsi:type=\"xs:string\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">VOICE</ns11:values></ns4:item></ns11:values></ns4:item></ns4:describedBy><ns20:resourceType>r_PORT</ns20:resourceType></ns13:item></ns9:resources></ns9:ServiceOrderItemValue>";
+
+
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        GZIPOutputStream gzip = new GZIPOutputStream(out);
+        gzip.write(xmlStr.getBytes());
+        gzip.close();
+        String result = out.toString("ISO-8859-1");
+        System.out.println(result);
+        System.out.println(result.length());
+
+
+
+        GZIPInputStream gunzip = new GZIPInputStream(new ByteArrayInputStream(result.getBytes("ISO-8859-1")));
+        out.reset();
+        byte[] buffer = new byte[1024];
+        int length;
+        while ((length = gunzip.read(buffer)) != -1) {
+            out.write(buffer, 0, length);
+        }
+
+        System.out.println(out.toString());
+        System.out.println(out.toString().length());
+
+
+
+
+    }
+}
